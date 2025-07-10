@@ -54,7 +54,7 @@ const data = [
     },
     {
         id: "-OPITohAdf3G34zdoN-t",
-        category: "Language",
+        category: "Language",          
         color: "#d8f73b",
         description:
             "Bahasa Kanton adalah ragam bahasa prestise tradisional dari bahasa Yue...",

@@ -1,5 +1,3 @@
-// update file di app/page.tsx, menjadi
-
 import ClassGrid from "@/components/class-grid"
 import { Suspense } from "react"
 import { ClassesSkeleton } from "@/components/skeletons"
@@ -15,7 +13,7 @@ export default async function Home({
   searchParams: { query?: string; categories?: string; type?: string; status?: string }
 }) {
 
-  const res = await fetch('http://localhost:3000/api/course', {
+  const res = await fetch('http://localhost:3001/api/course', {
     cache: 'no-store',
   });
 
