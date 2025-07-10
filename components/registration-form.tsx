@@ -11,7 +11,6 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Calendar } from "@/components/ui/calendar"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { toast } from "@/components/ui/use-toast"
@@ -72,12 +71,7 @@ export function RegistrationForm({ classId, className }: RegistrationFormProps) 
       // Convert birthDate to timestamp
       const birthDateTimestamp = data.birthDate.getTime()
 
-      const registrationData = {
-        ...data,
-        birthDate: birthDateTimestamp,
-        classId: classId,
-        // Make sure all required RegistrationData fields are included
-      };
+      
 
       // await registerParticipant(registrationData, "class");
 

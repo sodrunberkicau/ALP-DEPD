@@ -7,19 +7,26 @@ import { Newsletter } from "@/components/newsletter"
 import { filterClasses } from "@/lib/utils"
 
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: { query?: string; categories?: string; type?: string; status?: string }
-}) {
+export default async function Home({searchParams}: {
+   searchParams: { query?: string; categories?: string; type?: string; status?: string }
+ }) {
 
+   
   const res = await fetch('http://localhost:3001/api/course', {
     cache: 'no-store',
   });
 
   const  data  = await res.json();
 
-  const filteredClasses = filterClasses(data, searchParams)
+   const {query, categories, type, status} = await searchParams;
+    const params = {
+        query: query || '',
+        categories: categories || '',
+        type: type || '',
+        status: status || ''
+    }
+
+  const filteredClasses = await filterClasses(data, params)
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
